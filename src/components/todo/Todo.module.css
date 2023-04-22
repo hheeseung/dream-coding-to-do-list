@@ -27,8 +27,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5a5a5a;
-  color: rgb(255, 255, 255);
+  background-color: inherit;
+  color: #b00020;
   border-radius: 50%;
   font-size: large;
   outline: none;
@@ -38,5 +38,27 @@
 }
 
 .deleteToDo:hover {
-  background-color: rgb(239, 133, 46);
+  background-color: #b00020;
+  color: #fff;
+}
+
+.dark__deleteToDo {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  color: #cf6679;
+  border-radius: 50%;
+  font-size: large;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dark__deleteToDo:hover {
+  background-color: #cf6679;
+  color: #fff;
 }
