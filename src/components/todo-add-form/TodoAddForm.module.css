@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 1.2em;
+}
+
+.dark__form {
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  color: #fff;
+  padding: 1.2em;
+}
+
+.input {
+  width: 85%;
+  padding: 0.8rem;
+  font-size: larger;
+  outline: none;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.addToDo {
+  width: 15%;
+  padding: 0.8rem;
+  font-size: larger;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #007acc;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.dark__addToDo {
+  width: 15%;
+  padding: 0.8rem;
+  font-size: larger;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #90caf9;
+  cursor: pointer;
+}

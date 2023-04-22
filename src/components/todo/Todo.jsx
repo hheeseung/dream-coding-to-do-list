@@ -3,7 +3,7 @@ import styles from "./Todo.module.css";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-export default function Todo({ id, todo, isDone, handleDelete, setTodos }) {
+export default function Todo({ id, todo, isDone, setTodos }) {
   const { isDark } = useContext(ThemeContext);
 
   const handleCheck = (id) => {
@@ -15,6 +15,13 @@ export default function Todo({ id, todo, isDone, handleDelete, setTodos }) {
         return item;
       }
     });
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  };
+
+  const handleDelete = (id) => {
+    const defaultTodos = JSON.parse(localStorage.getItem("todos"));
+    const updatedTodos = defaultTodos.filter((value) => value.id !== id);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
     setTodos(JSON.parse(localStorage.getItem("todos")));
   };

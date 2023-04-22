@@ -1,0 +1,61 @@
+.todolist {
+  width: 30em;
+  margin: 0 auto;
+  box-shadow: 10px 10px 30px 0px rgba(97, 97, 97, 1);
+}
+
+.todos {
+  height: 60vh;
+  background-color: #fff;
+  padding: 1.2em;
+  overflow-y: scroll;
+}
+
+.dark__todos {
+  height: 60vh;
+  background-color: #212121;
+  color: #fff;
+  padding: 1.2em;
+  overflow-y: scroll;
+}
+
+.todos::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.todos::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: #a8a8a8;
+  border-radius: 10px;
+}
+
+.todos::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+.dark__todos::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.dark__todos::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: #575757;
+  border-radius: 10px;
+}
+
+.dark__todos::-webkit-scrollbar-track {
+  background: #303030;
+}
+
+.todo {
+  list-style: none;
+  font-size: larger;
+}
+@media screen {
+  @media (max-width: 575px) {
+    .todolist {
+      width: 90%;
+      font-size: small;
+    }
+  }
+}
