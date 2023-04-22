@@ -2,17 +2,17 @@ import { BsFillSunFill } from "react-icons/bs";
 import styles from "./App.module.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Todo from "./components/todo/Todo";
 import { v4 as uuidv4 } from "uuid";
+import Todo from "./components/todo/Todo";
 uuidv4();
 
-const DEFAULT_DATA = JSON.parse(localStorage.getItem("todos")) || [];
+const DEFAULT_TODOS = JSON.parse(localStorage.getItem("todos")) || [];
 
 function App() {
   const { register, handleSubmit, setValue } = useForm();
-  const [todos, setTodos] = useState(DEFAULT_DATA);
+  const [todos, setTodos] = useState(DEFAULT_TODOS);
 
-  const onValid = (data) => {
+  const handleAdd = (data) => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify(todos));
     }
@@ -51,11 +51,16 @@ function App() {
         <main className={styles.todos}>
           <ul className={styles.todo}>
             {todos.map((todo) => (
-              <Todo {...todo} key={todo.id} handleDelete={handleDelete} />
+              <Todo
+                {...todo}
+                key={todo.id}
+                handleDelete={handleDelete}
+                setTodos={setTodos}
+              />
             ))}
           </ul>
         </main>
-        <form className={styles.form} onSubmit={handleSubmit(onValid)}>
+        <form className={styles.form} onSubmit={handleSubmit(handleAdd)}>
           <input
             type="text"
             placeholder="Add To Do"

@@ -6,8 +6,19 @@
   margin-bottom: 0.8rem;
 }
 
-.todoTitle input {
+.todoTitle {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
   margin-right: 0.7rem;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.checked {
+  text-decoration: line-through;
 }
 
 .deleteToDo {
