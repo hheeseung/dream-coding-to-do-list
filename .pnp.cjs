@@ -37,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:7.43.9"],\
             ["react-icons", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:4.8.0"],\
             ["react-scripts", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:5.0.1"],\
+            ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -7718,6 +7719,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:7.43.9"],\
             ["react-icons", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:4.8.0"],\
             ["react-scripts", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:5.0.1"],\
+            ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -16773,6 +16775,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/uuid-npm-8.3.2-eca0baba53-5575a8a75c.zip/node_modules/uuid/",\
           "packageDependencies": [\
             ["uuid", "npm:8.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:9.0.0", {\
+          "packageLocation": "./.yarn/cache/uuid-npm-9.0.0-46c41e3e43-8dd2c83c43.zip/node_modules/uuid/",\
+          "packageDependencies": [\
+            ["uuid", "npm:9.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

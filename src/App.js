@@ -1,38 +1,38 @@
-import { BsFillSunFill, BsFillTrashFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
 import styles from "./App.module.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Todo from "./components/todo/Todo";
+import { v4 as uuidv4 } from "uuid";
+uuidv4();
 
-const todoList = [
-  {
-    id: 1,
-    todo: "React.js 공부하기",
-    isDone: false,
-  },
-  {
-    id: 2,
-    todo: "운동하기",
-    isDone: false,
-  },
-];
+const DEFAULT_DATA = JSON.parse(localStorage.getItem("todos")) || [];
 
 function App() {
   const { register, handleSubmit, setValue } = useForm();
-  const [todos, setTodos] = useState(todoList);
+  const [todos, setTodos] = useState(DEFAULT_DATA);
 
   const onValid = (data) => {
-    setTodos((todo) => {
-      const newTodos = [
-        ...todo,
-        { id: todo.length + 1, todo: data.todo, isDone: false },
-      ];
-      return newTodos;
-    });
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    const defaultTodos = JSON.parse(localStorage.getItem("todos"));
+    const newTodos = [
+      ...defaultTodos,
+      { id: uuidv4(), todo: data.todo, isDone: false },
+    ];
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+
+    setTodos(JSON.parse(localStorage.getItem("todos")));
     setValue("todo", "");
   };
 
   const handleDelete = (id) => {
-    setTodos((todo) => todo.filter((value) => value.id !== id));
+    const defaultTodos = JSON.parse(localStorage.getItem("todos"));
+    const updatedTodos = defaultTodos.filter((value) => value.id !== id);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+    setTodos(JSON.parse(localStorage.getItem("todos")));
   };
 
   return (
@@ -51,18 +51,7 @@ function App() {
         <main className={styles.todos}>
           <ul className={styles.todo}>
             {todos.map((todo) => (
-              <li key={todo.id} className={styles.todoDetail}>
-                <div className={styles.todoTitle}>
-                  <input type="checkbox" />
-                  <span>{todo.todo}</span>
-                </div>
-                <button
-                  className={styles.deleteToDo}
-                  onClick={() => handleDelete(todo.id)}
-                >
-                  <BsFillTrashFill />
-                </button>
-              </li>
+              <Todo {...todo} key={todo.id} handleDelete={handleDelete} />
             ))}
           </ul>
         </main>

@@ -44,7 +44,6 @@
   cursor: pointer;
 }
 
-/* ToDos */
 .todos {
   height: 60vh;
   background-color: rgb(34, 36, 58);
@@ -70,37 +69,6 @@
 .todo {
   list-style: none;
   font-size: larger;
-}
-
-.todoDetail {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
-.todoTitle input {
-  margin-right: 0.7rem;
-}
-
-.deleteToDo {
-  width: 1.8rem;
-  height: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5a5a5a;
-  color: rgb(255, 255, 255);
-  border-radius: 50%;
-  font-size: large;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.deleteToDo:hover {
-  background-color: rgb(239, 133, 46);
 }
 
 /* Form */
