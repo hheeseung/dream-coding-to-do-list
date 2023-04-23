@@ -4,7 +4,6 @@ import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./TodoList.module.css";
 
 export default function TodoList({
-  handleDelete,
   setTodos,
   filteredTodos,
   setFilteredTodos,
@@ -18,7 +17,6 @@ export default function TodoList({
           <Todo
             {...todo}
             key={todo.id}
-            handleDelete={handleDelete}
             setTodos={setTodos}
             filteredTodos={filteredTodos}
             setFilteredTodos={setFilteredTodos}
