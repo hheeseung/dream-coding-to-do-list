@@ -19,6 +19,7 @@
 
 .checked {
   text-decoration: line-through;
+  color: #aaaaaa;
 }
 
 .deleteToDo {
