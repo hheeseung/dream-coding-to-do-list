@@ -34,7 +34,7 @@ export default function TodoAddForm({ todos, setTodos, setFilteredTodos }) {
         type="text"
         placeholder="Add To Do"
         className={styles.input}
-        {...register("todo")}
+        {...register("todo", { required: true })}
       />
       <button className={isDark ? styles.dark__addToDo : styles.addToDo}>
         Add
