@@ -4,8 +4,6 @@ import styles from "./TodoAddForm.module.css";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-uuidv4();
-
 export default function TodoAddForm({ todos, setTodos, setFilteredTodos }) {
   const { isDark } = useContext(ThemeContext);
 
