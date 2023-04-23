@@ -8,9 +8,8 @@ import TodoAddForm from "./components/todo-add-form/TodoAddForm";
 const DEFAULT_TODOS = JSON.parse(localStorage.getItem("todos")) || [];
 
 function App() {
-  const { isDark } = useContext(ThemeContext);
   const [todos, setTodos] = useState(DEFAULT_TODOS);
-  const { changeTheme } = useContext(ThemeContext);
+  const { isDark, changeTheme } = useContext(ThemeContext);
   const [filteredTodos, setFilteredTodos] = useState(todos);
 
   return (
