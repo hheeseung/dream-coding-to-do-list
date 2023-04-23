@@ -3,19 +3,26 @@ import styles from "./Todo.module.css";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-export default function Todo({ id, todo, isDone, setTodos }) {
+export default function Todo({
+  id,
+  todo,
+  isDone,
+  setTodos,
+  filteredTodos,
+  setFilteredTodos,
+}) {
   const { isDark } = useContext(ThemeContext);
 
   const handleCheck = (id) => {
-    const defaultTodos = JSON.parse(localStorage.getItem("todos"));
-    const updatedTodos = defaultTodos.map((item) => {
-      if (item.id === id) {
-        return { ...item, isDone: !item.isDone };
+    const updatedTodos = filteredTodos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isDone: !todo.isDone };
       } else {
-        return item;
+        return todo;
       }
     });
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setFilteredTodos(updatedTodos);
     setTodos(JSON.parse(localStorage.getItem("todos")));
   };
 
@@ -23,6 +30,7 @@ export default function Todo({ id, todo, isDone, setTodos }) {
     const defaultTodos = JSON.parse(localStorage.getItem("todos"));
     const updatedTodos = defaultTodos.filter((value) => value.id !== id);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setFilteredTodos(updatedTodos);
     setTodos(JSON.parse(localStorage.getItem("todos")));
   };
 

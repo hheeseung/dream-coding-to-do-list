@@ -8,15 +8,25 @@ import TodoAddForm from "./components/todo-add-form/TodoAddForm";
 const DEFAULT_TODOS = JSON.parse(localStorage.getItem("todos")) || [];
 
 function App() {
+  const { isDark } = useContext(ThemeContext);
   const [todos, setTodos] = useState(DEFAULT_TODOS);
   const { changeTheme } = useContext(ThemeContext);
+  const [filteredTodos, setFilteredTodos] = useState(todos);
 
   return (
     <>
-      <div className={styles.dark__wrapper}>
+      <div className={isDark ? styles.dark__wrapper : styles.wrapper}>
         <div className={styles.todolist}>
-          <Navbar changeTheme={changeTheme} />
-          <TodoList todos={todos} setTodos={setTodos} />
+          <Navbar
+            changeTheme={changeTheme}
+            todos={todos}
+            setFilteredTodos={setFilteredTodos}
+          />
+          <TodoList
+            setTodos={setTodos}
+            setFilteredTodos={setFilteredTodos}
+            filteredTodos={filteredTodos}
+          />
           <TodoAddForm todos={todos} setTodos={setTodos} />
         </div>
       </div>
