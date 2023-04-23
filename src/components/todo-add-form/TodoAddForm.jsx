@@ -6,7 +6,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 
 uuidv4();
 
-export default function TodoAddForm({ todos, setTodos }) {
+export default function TodoAddForm({ todos, setTodos, setFilteredTodos }) {
   const { isDark } = useContext(ThemeContext);
 
   const { register, handleSubmit, setValue } = useForm();
@@ -20,7 +20,7 @@ export default function TodoAddForm({ todos, setTodos }) {
       { id: uuidv4(), todo: data.todo, isDone: false },
     ];
     localStorage.setItem("todos", JSON.stringify(newTodos));
-
+    setFilteredTodos(newTodos);
     setTodos(JSON.parse(localStorage.getItem("todos")));
     setValue("todo", "");
   };

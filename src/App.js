@@ -27,7 +27,11 @@ function App() {
             setFilteredTodos={setFilteredTodos}
             filteredTodos={filteredTodos}
           />
-          <TodoAddForm todos={todos} setTodos={setTodos} />
+          <TodoAddForm
+            todos={todos}
+            setTodos={setTodos}
+            setFilteredTodos={setFilteredTodos}
+          />
         </div>
       </div>
     </>
