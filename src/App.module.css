@@ -22,5 +22,8 @@
     .wrapper {
       padding: 1em;
     }
+    .dark__wrapper {
+      padding: 1em;
+    }
   }
 }
