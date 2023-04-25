@@ -3,8 +3,8 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./Navbar.module.css";
 
-export default function Navbar({ todos, setFilteredTodos, changeTheme }) {
-  const { isDark } = useContext(ThemeContext);
+export default function Navbar({ todos, setFilteredTodos }) {
+  const { isDark, changeTheme } = useContext(ThemeContext);
 
   const onFilter = (filter) => {
     switch (filter) {

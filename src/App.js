@@ -9,18 +9,14 @@ const DEFAULT_TODOS = JSON.parse(localStorage.getItem("todos")) || [];
 
 function App() {
   const [todos, setTodos] = useState(DEFAULT_TODOS);
-  const { isDark, changeTheme } = useContext(ThemeContext);
+  const { isDark } = useContext(ThemeContext);
   const [filteredTodos, setFilteredTodos] = useState(todos);
 
   return (
     <>
       <div className={isDark ? styles.dark__wrapper : styles.wrapper}>
         <div className={styles.todolist}>
-          <Navbar
-            changeTheme={changeTheme}
-            todos={todos}
-            setFilteredTodos={setFilteredTodos}
-          />
+          <Navbar todos={todos} setFilteredTodos={setFilteredTodos} />
           <TodoList
             setTodos={setTodos}
             setFilteredTodos={setFilteredTodos}
