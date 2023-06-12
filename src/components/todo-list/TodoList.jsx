@@ -1,28 +1,47 @@
-import { useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Todo from "../todo/Todo";
-import { ThemeContext } from "../../context/ThemeContext";
-import styles from "./TodoList.module.css";
+import TodoAddForm from "../todo-add-form/TodoAddForm";
+import { useState } from "react";
 
-export default function TodoList({
-  setTodos,
-  filteredTodos,
-  setFilteredTodos,
-}) {
-  const { isDark } = useContext(ThemeContext);
+export default function TodoList() {
+  const [todos, setTodos] = useState([]);
+
+  const onAdd = (todo) => {
+    setTodos([...todos, { id: uuidv4(), todo, isDone: false }]);
+  };
+
+  const onUpdate = (id) => {
+    setTodos((todolist) =>
+      todolist.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isDone: !todo.isDone };
+        }
+        return todo;
+      })
+    );
+  };
+
+  const onDelete = (id) => {
+    setTodos((todolist) => todolist.filter((todo) => todo.id !== id));
+  };
 
   return (
-    <main className={isDark ? styles.dark__todos : styles.todos}>
-      <ul className={styles.todo}>
-        {filteredTodos.map((todo) => (
-          <Todo
-            {...todo}
-            key={todo.id}
-            setTodos={setTodos}
-            filteredTodos={filteredTodos}
-            setFilteredTodos={setFilteredTodos}
-          />
-        ))}
-      </ul>
-    </main>
+    <>
+      <main>
+        <ul>
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              todo={todo.todo}
+              isDone={todo.isDone}
+              onUpdate={onUpdate}
+              onDelete={onDelete}
+            />
+          ))}
+        </ul>
+      </main>
+      <TodoAddForm todos={todos} setTodos={setTodos} onAdd={onAdd} />
+    </>
   );
 }
