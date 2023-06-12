@@ -25,7 +25,11 @@ export default function Todo({ id, todo, isDone, onUpdate, onDelete }) {
         <div onClick={() => onUpdate(id)} className={iconClasses}>
           {isDone ? <BsCheckSquare /> : <BsSquare />}
         </div>
-        <span className={styles["todo-text"]}>{todo}</span>
+        {isDone ? (
+          <span className={styles["todo-text-done"]}>{todo}</span>
+        ) : (
+          <span className={styles["todo-text"]}>{todo}</span>
+        )}
       </div>
       <button onClick={() => onDelete(id)} className={deleteClasses}>
         <BsFillTrashFill />
