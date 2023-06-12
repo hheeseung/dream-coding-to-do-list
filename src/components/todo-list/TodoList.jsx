@@ -1,20 +1,23 @@
 import { v4 as uuidv4 } from "uuid";
 import Todo from "../todo/Todo";
 import TodoAddForm from "../todo-add-form/TodoAddForm";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export default function TodoList() {
+  const { isDark } = useContext(ThemeContext);
   const initialTodos = getInitialTodos();
   const [todos, setTodos] = useState(initialTodos);
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
+    localStorage.getItem("theme");
     const storedTodos = localStorage.getItem("todos");
     if (storedTodos) {
       setTodos(JSON.parse(storedTodos));
     }
-  }, []);
+  }, [isDark]);
 
   const onAdd = (todo) => {
     setTodos([...todos, { id: uuidv4(), todo, isDone: false }]);
@@ -37,7 +40,8 @@ export default function TodoList() {
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem("theme", JSON.stringify(isDark));
+  }, [todos, isDark]);
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === "all") {

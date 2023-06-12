@@ -3,7 +3,8 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(false);
+  const initialTheme = getInitialTheme();
+  const [isDark, setIsDark] = useState(initialTheme);
   const changeTheme = () => setIsDark((dark) => !dark);
 
   return (
@@ -11,4 +12,9 @@ export function ThemeProvider({ children }) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+function getInitialTheme() {
+  const storedTheme = localStorage.getItem("theme");
+  return storedTheme ? JSON.parse(storedTheme) : false;
 }

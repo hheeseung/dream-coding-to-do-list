@@ -4,14 +4,14 @@ import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ setFilter }) {
-  // const { isDark, changeTheme } = useContext(ThemeContext);
+  const { isDark, changeTheme } = useContext(ThemeContext);
 
   const handleFilter = (filter) => setFilter(filter);
 
   return (
-    <nav style={{ display: "flex" }}>
-      <div>
-        <BsMoonFill />
+    <nav>
+      <div onClick={changeTheme}>
+        {isDark ? <BsFillSunFill /> : <BsMoonFill />}
       </div>
       <div>
         <span onClick={() => handleFilter("all")} className={styles.details}>
