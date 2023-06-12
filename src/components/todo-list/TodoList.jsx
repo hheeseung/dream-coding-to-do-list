@@ -2,10 +2,12 @@ import { v4 as uuidv4 } from "uuid";
 import Todo from "../todo/Todo";
 import TodoAddForm from "../todo-add-form/TodoAddForm";
 import { useEffect, useState } from "react";
+import Navbar from "../navbar/Navbar";
 
 export default function TodoList() {
   const initialTodos = getInitialTodos();
   const [todos, setTodos] = useState(initialTodos);
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
@@ -37,11 +39,23 @@ export default function TodoList() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "all") {
+      return true;
+    } else if (filter === "inProgress") {
+      return !todo.isDone;
+    } else if (filter === "done") {
+      return todo.isDone;
+    }
+    return true;
+  });
+
   return (
     <>
+      <Navbar setFilter={setFilter} />
       <main>
         <ul>
-          {todos.map((todo) => (
+          {filteredTodos.map((todo) => (
             <Todo
               key={todo.id}
               id={todo.id}

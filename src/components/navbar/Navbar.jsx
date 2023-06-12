@@ -3,38 +3,27 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./Navbar.module.css";
 
-export default function Navbar({ todos, setFilteredTodos }) {
-  const { isDark, changeTheme } = useContext(ThemeContext);
+export default function Navbar({ setFilter }) {
+  // const { isDark, changeTheme } = useContext(ThemeContext);
 
-  const onFilter = (filter) => {
-    switch (filter) {
-      case "all":
-        return setFilteredTodos(todos);
-      case "inProgress":
-        return setFilteredTodos(todos.filter((item) => !item.isDone));
-      case "done":
-        return setFilteredTodos(todos.filter((item) => item.isDone));
-      default:
-        return setFilteredTodos(todos);
-    }
-  };
+  const handleFilter = (filter) => setFilter(filter);
 
   return (
-    <nav className={isDark ? styles.dark__navbar : styles.navbar}>
-      <div
-        className={isDark ? styles.dark__theme : styles.theme}
-        onClick={() => changeTheme()}
-      >
-        {isDark ? <BsFillSunFill /> : <BsMoonFill />}
+    <nav style={{ display: "flex" }}>
+      <div>
+        <BsMoonFill />
       </div>
-      <div className={isDark ? styles.dark__category : styles.category}>
-        <span className={styles.details} onClick={() => onFilter("all")}>
+      <div>
+        <span onClick={() => handleFilter("all")} className={styles.details}>
           All
         </span>
-        <span className={styles.details} onClick={() => onFilter("inProgress")}>
+        <span
+          onClick={() => handleFilter("inProgress")}
+          className={styles.details}
+        >
           In Progress
         </span>
-        <span className={styles.details} onClick={() => onFilter("done")}>
+        <span onClick={() => handleFilter("done")} className={styles.details}>
           Done
         </span>
       </div>
