@@ -1,10 +1,18 @@
 import { v4 as uuidv4 } from "uuid";
 import Todo from "../todo/Todo";
 import TodoAddForm from "../todo-add-form/TodoAddForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const initialTodos = getInitialTodos();
+  const [todos, setTodos] = useState(initialTodos);
+
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
 
   const onAdd = (todo) => {
     setTodos([...todos, { id: uuidv4(), todo, isDone: false }]);
@@ -25,6 +33,10 @@ export default function TodoList() {
     setTodos((todolist) => todolist.filter((todo) => todo.id !== id));
   };
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <>
       <main>
@@ -44,4 +56,9 @@ export default function TodoList() {
       <TodoAddForm todos={todos} setTodos={setTodos} onAdd={onAdd} />
     </>
   );
+}
+
+function getInitialTodos() {
+  const storedTodos = localStorage.getItem("todos");
+  return storedTodos ? JSON.parse(storedTodos) : [];
 }
