@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:13.5.0"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint-config-react-app", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:18.2.0"],\
@@ -6463,6 +6464,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["clean-css", [\
         ["npm:5.3.2", {\
           "packageLocation": "./.yarn/cache/clean-css-npm-5.3.2-8946cefff9-8787b281ac.zip/node_modules/clean-css/",\
@@ -7713,6 +7723,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:13.5.0"],\
+            ["classnames", "npm:2.3.2"],\
             ["eslint-config-react-app", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3eab3b0819c5315f893e7f689ff87180a91482e0583ef1185dd0428b57675197cbbded3620ffbeaba790883a9a3f93018b2a0225c91a4c3b5d764166fd742987#npm:18.2.0"],\

@@ -4,6 +4,8 @@ import TodoAddForm from "../todo-add-form/TodoAddForm";
 import { useContext, useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { ThemeContext } from "../../context/ThemeContext";
+import styles from "./TodoList.module.css";
+import classNames from "classnames";
 
 export default function TodoList() {
   const { isDark } = useContext(ThemeContext);
@@ -54,10 +56,14 @@ export default function TodoList() {
     return true;
   });
 
+  const containerClasses = classNames(styles.container, {
+    [styles.dark]: isDark,
+  });
+
   return (
-    <>
+    <div className={containerClasses}>
       <Navbar setFilter={setFilter} />
-      <main>
+      <main className={styles.todolist}>
         <ul>
           {filteredTodos.map((todo) => (
             <Todo
@@ -72,7 +78,7 @@ export default function TodoList() {
         </ul>
       </main>
       <TodoAddForm todos={todos} setTodos={setTodos} onAdd={onAdd} />
-    </>
+    </div>
   );
 }
 

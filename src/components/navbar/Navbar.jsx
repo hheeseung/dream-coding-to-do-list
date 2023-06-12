@@ -1,29 +1,50 @@
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./Navbar.module.css";
+import classNames from "classnames";
 
 export default function Navbar({ setFilter }) {
   const { isDark, changeTheme } = useContext(ThemeContext);
+  const [activeFilter, setActiveFilter] = useState("all");
 
-  const handleFilter = (filter) => setFilter(filter);
+  const handleFilter = (filter) => {
+    setFilter(filter);
+    setActiveFilter(filter);
+  };
+
+  const navbarClasses = classNames(styles.navbar, {
+    [styles.dark]: isDark,
+  });
 
   return (
-    <nav>
-      <div onClick={changeTheme}>
+    <nav className={navbarClasses}>
+      <div className={styles.theme} onClick={changeTheme}>
         {isDark ? <BsFillSunFill /> : <BsMoonFill />}
       </div>
-      <div>
-        <span onClick={() => handleFilter("all")} className={styles.details}>
+      <div className={styles.category}>
+        <span
+          onClick={() => handleFilter("all")}
+          className={classNames(styles.details, {
+            [styles.active]: activeFilter === "all",
+          })}
+        >
           All
         </span>
         <span
           onClick={() => handleFilter("inProgress")}
-          className={styles.details}
+          className={classNames(styles.details, {
+            [styles.active]: activeFilter === "inProgress",
+          })}
         >
           In Progress
         </span>
-        <span onClick={() => handleFilter("done")} className={styles.details}>
+        <span
+          onClick={() => handleFilter("done")}
+          className={classNames(styles.details, {
+            [styles.active]: activeFilter === "done",
+          })}
+        >
           Done
         </span>
       </div>

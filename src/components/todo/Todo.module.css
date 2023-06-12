@@ -1,65 +1,39 @@
-/* ToDos */
-.todoDetail {
+.todo {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
+  padding: 3px 5px;
 }
 
-.todoTitle {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox {
-  margin-right: 0.7rem;
-  cursor: pointer;
-  font-size: larger;
-}
-
-.checked {
-  text-decoration: line-through;
-  color: #aaaaaa;
-}
-
-.deleteToDo {
-  width: 1.8rem;
-  height: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: inherit;
-  color: #b00020;
-  border-radius: 50%;
-  font-size: large;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.deleteToDo:hover {
-  background-color: #b00020;
+.todo.dark {
   color: #fff;
 }
 
-.dark__deleteToDo {
-  width: 1.8rem;
-  height: 1.8rem;
+.todo-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: inherit;
-  color: #cf6679;
-  border-radius: 50%;
-  font-size: large;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
 
-.dark__deleteToDo:hover {
-  background-color: #cf6679;
+.todo-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  font-size: 16px;
+}
+
+.todo-delete {
+  background-color: #ff6b6b;
   color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.todo-delete.dark {
+  background-color: #c0392b;
 }
