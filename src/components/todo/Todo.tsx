@@ -17,7 +17,7 @@ export default function Todo({ id, todo, isDone, onUpdate, onDelete }: IToDo) {
       <div className={styles.todo}>
         <p>{todo}</p>
         <div className={styles.status}>
-          <TaskBadge isDone={isDone} text={isDone ? "Finished" : "To Do"} />
+          <TaskBadge isDone={isDone} text={isDone ? "완료" : "진행중"} />
           <span className={styles.delete} onClick={() => onDelete(id)}>
             <AiOutlineCloseCircle />
           </span>

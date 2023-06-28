@@ -22,7 +22,7 @@ export default function Navbar({ setFilter }: Filter) {
         })}
         onClick={() => handleFilter("all")}
       >
-        All Tasks
+        전체
       </span>
       <span
         className={classNames(styles.category, {
@@ -30,7 +30,7 @@ export default function Navbar({ setFilter }: Filter) {
         })}
         onClick={() => handleFilter("inProgress")}
       >
-        In Progress
+        진행중
       </span>
       <span
         className={classNames(styles.category, {
@@ -38,7 +38,7 @@ export default function Navbar({ setFilter }: Filter) {
         })}
         onClick={() => handleFilter("done")}
       >
-        Finished
+        완료
       </span>
     </nav>
   );
