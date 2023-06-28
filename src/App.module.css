@@ -1,9 +1,5 @@
 .wrapper {
-  width: 100vw;
   height: 100vh;
-  background-color: #fff;
-}
-
-.wrapper.dark {
-  background-color: #cfcfcf;
+  background-color: #fafbff;
+  overflow-y: scroll;
 }
