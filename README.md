@@ -1,8 +1,8 @@
-# To Do List
+# Task Today
 
 ## 프로젝트 소개
-React.js 기반의 To Do List 프로젝트입니다.<br>
-할일을 체크하고 기록할 수 있습니다. 
+React.js 기반의 할 일을 기록하는 프로젝트입니다.<br>
+오늘 할 일을 기록하고 완료 여부를 조회할 수 있습니다. 
 > 개발기간: 2023.4.20 ~ 2023.4.25 <br> 리팩토링: 2023.6 ~
 
 ## 배포
@@ -10,7 +10,7 @@ https://splendorous-jalebi-a58714.netlify.app/
 
 ## 프로젝트 실행 방법
 ```
-git clone https://github.com/hheeseung/to-do-list.git
+git clone https://github.com/hheeseung/task-today.git
 cd to-do-list
 yarn install
 yarn start
