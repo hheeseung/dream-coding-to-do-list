@@ -11,7 +11,7 @@ https://splendorous-jalebi-a58714.netlify.app/
 ## 프로젝트 실행 방법
 ```
 git clone https://github.com/hheeseung/task-today.git
-cd to-do-list
+cd task-today
 yarn install
 yarn start
 ```
