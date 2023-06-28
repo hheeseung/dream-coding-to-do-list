@@ -68,18 +68,22 @@ export default function TodoList() {
   return (
     <section className={styles.todolist}>
       <Navbar setFilter={setFilter} />
-      <ul>
-        {filteredTodos.map((todo) => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            todo={todo.todo}
-            isDone={todo.isDone}
-            onUpdate={onUpdate}
-            onDelete={onDelete}
-          />
-        ))}
-      </ul>
+      {todos.length === 0 ? (
+        <p className={styles.notification}>오늘의 할 일이 없습니다.</p>
+      ) : (
+        <ul>
+          {filteredTodos.map((todo) => (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              todo={todo.todo}
+              isDone={todo.isDone}
+              onUpdate={onUpdate}
+              onDelete={onDelete}
+            />
+          ))}
+        </ul>
+      )}
       <button className={styles.add} onClick={togglePopup}>
         <AiOutlinePlus />
       </button>
