@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4d5bbe;
+  padding: 30px 15px 10px 15px;
+  color: white;
+}
+
+.metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
