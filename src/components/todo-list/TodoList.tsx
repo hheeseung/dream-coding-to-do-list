@@ -15,7 +15,7 @@ export interface IToDos {
 export default function TodoList() {
   const initialTodos = getInitialTodos();
   const [todos, setTodos] = useState<IToDos[]>(initialTodos);
-  const [filter, setFilter] = useState("inProgress");
+  const [filter, setFilter] = useState("all");
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
@@ -54,6 +54,8 @@ export default function TodoList() {
 
   const filteredTodos = todos.filter((todo) => {
     switch (filter) {
+      case "all":
+        return true;
       case "inProgress":
         return !todo.isDone;
       case "done":

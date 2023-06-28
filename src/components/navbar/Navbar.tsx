@@ -7,7 +7,7 @@ type Filter = {
 };
 
 export default function Navbar({ setFilter }: Filter) {
-  const [activeFilter, setActiveFilter] = useState("inProgress");
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const handleFilter = (filter: string) => {
     setFilter(filter);
@@ -16,6 +16,14 @@ export default function Navbar({ setFilter }: Filter) {
 
   return (
     <nav className={styles.navbar}>
+      <span
+        className={classNames(styles.category, {
+          [styles.isActive]: activeFilter === "all",
+        })}
+        onClick={() => handleFilter("all")}
+      >
+        All Tasks
+      </span>
       <span
         className={classNames(styles.category, {
           [styles.isActive]: activeFilter === "inProgress",
