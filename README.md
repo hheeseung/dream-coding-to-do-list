@@ -20,11 +20,13 @@ yarn start
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white">
 
 ## 화면 구성
-|오늘의 할 일 전체 항목|진행 중인 항목|
+|초기 화면|오늘의 할 일 전체 항목|
 |:----------:|:-----------:|
-|![all](https://github.com/hheeseung/to-do-list/assets/87454393/4ae3d0cd-5169-4008-9b39-c1bea5c75241)|![in progress](https://github.com/hheeseung/to-do-list/assets/87454393/67dd99b4-bc48-45b6-ac3f-1d87606e53f2)|
-|**완료된 항목**|**할 일 입력 모달창**|
-|![finished](https://github.com/hheeseung/to-do-list/assets/87454393/0eb1993d-b341-45b9-bff7-383838917532)|![write down](https://github.com/hheeseung/to-do-list/assets/87454393/4293aed2-5ffb-420c-a41a-d7a41152fc71)|
+|![01 initial](https://github.com/hheeseung/task-today/assets/87454393/586919c7-a1ff-410f-bcb8-0220afe9459f)|![02 alltask](https://github.com/hheeseung/task-today/assets/87454393/25f07fc4-7e6c-4f25-b18b-0219d8c74351)|
+|**진행 중인 항목**|**완료된 항목**|
+|![03 inprogress](https://github.com/hheeseung/task-today/assets/87454393/c0fb5e77-3018-4de4-bf34-7bd2c4ebd22b)|![04 complete](https://github.com/hheeseung/task-today/assets/87454393/b2a37885-7b6a-49a4-8527-f611eeaaec1f)|
+|**할 일 입력 모달창**|
+|![05 input](https://github.com/hheeseung/task-today/assets/87454393/380c3ead-e6ba-4abb-92f2-b28ba2e20220)|
 
 ## 주요 기능
 - 할일 추가, 삭제
