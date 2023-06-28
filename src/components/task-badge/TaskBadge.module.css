@@ -1,0 +1,11 @@
+.badge {
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: x-small;
+  background-color: #09a892;
+  color: #fff;
+}
+
+.isDone {
+  background-color: #4d5bbe;
+}
