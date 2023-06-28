@@ -3,3 +3,7 @@
   background-color: #fafbff;
   overflow-y: scroll;
 }
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
