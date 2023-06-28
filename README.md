@@ -1,5 +1,5 @@
 # To Do List
-> React.js 학습용 프로젝트<br> 개발기간: 2023.4.20 ~ 2023.4.25
+> React.js 학습용 프로젝트<br> 개발기간: 2023.4.20 ~ 2023.4.25 <br> 리팩토링: 2023.6 ~
 
 ## 배포
 https://splendorous-jalebi-a58714.netlify.app/
