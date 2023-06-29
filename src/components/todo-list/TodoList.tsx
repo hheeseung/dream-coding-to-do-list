@@ -84,7 +84,11 @@ export default function TodoList() {
           ))}
         </ul>
       )}
-      <button className={styles.add} onClick={togglePopup}>
+      <button
+        className={styles.add}
+        onClick={togglePopup}
+        aria-label="add_button"
+      >
         <AiOutlinePlus />
       </button>
       {showPopup ? (
